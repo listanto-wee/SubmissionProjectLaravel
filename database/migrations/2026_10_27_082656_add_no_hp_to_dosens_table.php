@@ -12,7 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('dosens', function (Blueprint $table) {
-            $table->string('no_hp', 15)->nullable()->after('email');
+            $table->date('tanggal_lahir')->nullable();
+            $table->string('status')->default('aktif');
+            $table->string('nim', 12)->unique();
+
         });
     }
 
